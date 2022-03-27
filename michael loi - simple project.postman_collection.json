@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "fbe07450-e051-4ca3-aa7f-baebcf1135d7",
+		"name": "michael loi - simple project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"michaelloi\",\r\n    \"password\":\"123456410\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "user/currency/login",
+					"host": [
+						"user"
+					],
+					"path": [
+						"currency",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"michaelloi\",\r\n    \"password\":\"123456410\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"responseCode\":\"10000\",\r\n    \"responseTitle\":\"Login Success\",\r\n    \"responseDescription\":\"You have successfully logged in\",\r\n    \"data\":{\r\n        \"user\":{\r\n            \"userId\":\"12345678912345678\",\r\n            \"userName\":\"michaelloi\",\r\n            \"nickname\":\"Michael\",\r\n            \"fullname\":\"Michael Loi\",\r\n            \"accountNo\":\"1234567890\",\r\n            \"accountBalance\":100000000\r\n        }\r\n    }\r\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"michaelloi\",\r\n    \"password\":\"123456410\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"responseCode\":\"10001\",\r\n    \"responseTitle\":\"Login Failed\",\r\n    \"responseDescription\":\"Username not found\",\r\n    \"data\":{\r\n        \"user\":{\r\n            \"userId\":\"\",\r\n            \"userName\":\"\",\r\n            \"nickname\":\"\",\r\n            \"fullname\":\"\",\r\n            \"accountNo\":\"\"\r\n        }\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"michaelloi\",\r\n    \"nickname\":\"Michael\",\r\n    \"fullname\":\"Michael Loi\",\r\n    \"dateOfBirth\":\"1994-07-17\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "currency/user/register",
+					"host": [
+						"currency"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"michaelloi\",\r\n    \"password\":\"123201312345\",\r\n    \"nickname\":\"Michael\",\r\n    \"fullname\":\"Michael Loi\",\r\n    \"dateOfBirth\":\"1994-07-17\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"20000\",\n    \"responseTitle\": \"Register Success\",\n    \"responseDescription\": \"You registration is successful\",\n    \"data\": {\n        \"user\": {\n            \"userId\":\"12345678912345678\",\n            \"userName\":\"michaelloi\",\n            \"nickname\":\"Michael\",\n            \"fullname\":\"Michael Loi\",\n            \"accountNo\":\"1234567890\",\n            \"accountCcy\":\"IDR\",\n            \"accountBalance\":100000000\n        }\n    }\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"michaelloi\",\r\n    \"password\":\"123201312345\",\r\n    \"nickname\":\"Michael\",\r\n    \"fullname\":\"Michael Loi\",\r\n    \"dateOfBirth\":\"1994-07-17\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"responseCode\":\"20001\",\r\n    \"responseTitle\":\"Registration Failed\",\r\n    \"responseDescription\":\"Username already exists\",\r\n    \"data\":{\r\n        \"user\":{\r\n            \"userId\":\"\",\r\n            \"userName\":\"\",\r\n            \"nickname\":\"\",\r\n            \"fullname\":\"\",\r\n            \"accountNo\":\"\"\r\n        }\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Portfolio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "user/currency/portfolio",
+					"host": [
+						"user"
+					],
+					"path": [
+						"currency",
+						"portfolio"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"30000\",\n    \"responseTitle\": \"Get List Portofolio Success\",\n    \"responseDescription\": \"You have successfully retrieved portfolio data\",\n    \"data\": {\n        \"portfolioBalance\": 478770.41,\n        \"portfolio\": [\n            {\n                \"currencyCode\": \"USD\",\n                \"currencyName\": \"UNITED STATE DOLLAR\",\n                \"balance\": 10,\n                \"balanceIDR\": 143574,\n                \"bankBuyPrice\": 14289,\n                \"limitSell\":100\n            },\n            {\n                \"currencyCode\": \"CNY\",\n                \"currencyName\": \"YUAN\",\n                \"balance\": 100,\n                \"balanceIDR\": 225521.88,\n                \"bankBuyPrice\": 2242,\n                \"limitSell\":100\n            },\n            {\n                \"currencyCode\": \"SGD\",\n                \"currencyName\": \"SINGAPORE DOLLAR\",\n                \"balance\": 5,\n                \"balanceIDR\": 52862.30,\n                \"bankBuyPrice\": 10523,\n                \"limitSell\":100\n            },\n            {\n                \"currencyCode\": \"GBP\",\n                \"currencyName\": \"POUNDSTERLING\",\n                \"balance\": 3,\n                \"balanceIDR\": 56812.23,\n                \"bankBuyPrice\": 18800,\n                \"limitSell\":100\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"responseCode\":\"00002\",\r\n    \"responseTitle\":\"Service Internal Errpr\",\r\n    \"responseDescription\":\"A problem occurred. Sorry, this transaction cannot be processed\",\r\n    \"data\":{\r\n        \"portfolio\": [\r\n            {\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"amount\": 0\r\n            },\r\n            {\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"amount\": 0\r\n            },\r\n            {\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"amount\": 0\r\n            },\r\n            {\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"amount\": 0\r\n            }\r\n        ]\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Currency",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "transaction/currency/price",
+					"host": [
+						"transaction"
+					],
+					"path": [
+						"currency",
+						"price"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"00000\",\n    \"responseTitle\": \"Success\",\n    \"responseDescription\": \"\",\n    \"data\": {\n        \"currencyList\": [\n            {\n                \"currencyCode\": \"USD\",\n                \"currencyName\": \"UNITED STATE DOLLAR\",\n                \"bankSellPrice\": 14475,\n                \"limitBuy\":100\n            },\n            {\n                \"currencyCode\": \"CNY\",\n                \"currencyName\": \"YUAN\",\n                \"bankSellPrice\": 2265,\n                \"limitBuy\":100\n            },\n            {\n                \"currencyCode\": \"SGD\",\n                \"currencyName\": \"SINGAPORE DOLLAR\",\n                \"bankSellPrice\": 10629,\n                \"limitBuy\":100\n            },\n            {\n                \"currencyCode\": \"GBP\",\n                \"currencyName\": \"POUNDSTERLING\",\n                \"bankSellPrice\": 18995,\n                \"limitBuy\":100\n            }\n       ]\n    }\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"responseCode\":\"00002\",\r\n    \"responseTitle\":\"Service Internal Errpr\",\r\n    \"responseDescription\":\"A problem occurred. Sorry, this transaction cannot be processed\",\r\n    \"data\":{\r\n        \"portfolio\": [\r\n            {\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"amount\": 0,\r\n                \"limitBuy\":100\r\n            },\r\n            {\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"amount\": 0,\r\n                \"limitBuy\":100\r\n            },\r\n            {\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"amount\": 0,\r\n                \"limitBuy\":100\r\n            },\r\n            {\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"amount\": 0,\r\n                \"limitBuy\":100\r\n            }\r\n        ]\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "History Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "transaction/currency/history-transaction",
+					"host": [
+						"transaction"
+					],
+					"path": [
+						"currency",
+						"history-transaction"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"\",\r\n    \"paramToken\":\"\",\r\n    \"paramPassword\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"40000\",\n    \"responseTitle\": \"Get List History Transaction Success\",\n    \"responseDescription\": \"You have successfully retrieved history transaction data\",\n    \"data\": {\n        \"transactionList\": [\n            {\n                \"type\":\"BUY\",\n                \"currencyCode\": \"USD\",\n                \"currencyName\": \"UNITED STATE DOLLAR\",\n                \"transactionDate\":\"2022-03-04T15:00:00.000+00:00\",\n                \"transactionPrice\":{\n                    \"amount\": 1,\n                    \"price\": 14475\n                }\n            },\n            {\n                \"type\":\"SELL\",\n                \"currencyCode\": \"CNY\",\n                \"currencyName\": \"YUAN\",\n                \"transactionDate\":\"2022-03-04T15:00:00.000+00:00\",\n                \"transactionPrice\":{\n                    \"amount\": 1,\n                    \"price\": 2242\n                }\n            },\n            {\n                \"type\":\"TOPUP\",\n                \"currencyCode\": \"IDR\",\n                \"currencyName\": \"RUPIAH\",\n                \"transactionDate\":\"2022-03-04T15:00:00.000+00:00\",\n                \"transactionPrice\":{\n                    \"amount\": 1000000,\n                    \"price\": 1\n                }\n            }\n       ]\n    }\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"\",\r\n    \"paramToken\":\"\",\r\n    \"paramPassword\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"responseCode\":\"00002\",\r\n    \"responseTitle\":\"Service Internal Errpr\",\r\n    \"responseDescription\":\"A problem occurred. Sorry, this transaction cannot be processed\",\r\n    \"data\":{\r\n        \"transactionList\": [\r\n            {\r\n                \"type\":\"\",\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"transactionDate\":\"\",\r\n                \"transactionPrice\":{\r\n                    \"amount\": 0,\r\n                    \"price\": 0\r\n                }\r\n            },\r\n            {\r\n                \"type\":\"\",\r\n                \"currencyCode\": \"\",\r\n                \"currencyName\": \"\",\r\n                \"transactionDate\":\"\",\r\n                \"transactionPrice\":{\r\n                    \"amount\": 0,\r\n                    \"price\": 0\r\n                }\r\n            }\r\n       ]\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"BUY\",\r\n    \"currencyCode\": \"USD\",\r\n    \"currencyName\": \"UNITED STATE DOLLAR\",\r\n    \"transactionDate\": \"2022-03-04T15:00:00.000+00:00\",\r\n    \"transactionPrice\": {\r\n        \"amount\": 1,\r\n        \"price\": 14475\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "transaction/currency/acknowledge",
+					"host": [
+						"transaction"
+					],
+					"path": [
+						"currency",
+						"acknowledge"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"\",\r\n    \"paramToken\":\"\",\r\n    \"paramPassword\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"00000\",\n    \"responseTitle\": \"Success\",\n    \"responseDescription\": \"\",\n    \"data\": {\n        \"transactionId\":\"1231354464598790\",\n        \"transactionType\":\"BUY\",\n        \"transactionFromCcy\":\"IDR\",\n        \"transactionFromAmount\":14475,\n        \"transactionToCcy\":\"USD\",\n        \"transactionToAmount\":1,\n        \"transactionPrice\":14475,\n        \"transactionTotalPrice\":14475,\n        \"transactionDate\":\"2022-03-04T15:00:00.000+00:00\",\n        \"accountNo\":\"1234567890\",\n        \"isSuccess\":true\n    }\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"\",\r\n    \"paramToken\":\"\",\r\n    \"paramPassword\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"responseCode\":\"00002\",\r\n    \"responseTitle\":\"Service Internal Errpr\",\r\n    \"responseDescription\":\"A problem occurred. Sorry, this transaction cannot be processed\",\r\n    \"data\": {\r\n        \"transactionId\":\"1231354464598790\",\r\n        \"transactionType\":\"BUY\",\r\n        \"transactionFromCcy\":\"IDR\",\r\n        \"transactionFromAmount\":14475,\r\n        \"transactionToCcy\":\"USD\",\r\n        \"transactionToAmount\":1,\r\n        \"transactionPrice\":14475,\r\n        \"transactionTotalPrice\":14475,\r\n        \"transactionDate\":\"2022-03-04T15:00:00.000+00:00\",\r\n        \"accountNo\":\"1234567890\",\r\n        \"isSuccess\":true\r\n    }\r\n}"
+				}
+			]
+		}
+	]
+}
